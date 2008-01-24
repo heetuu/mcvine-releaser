@@ -1,0 +1,16 @@
+For any python packages who need install_info.py, add it to
+ who_needs_install_info.py
+
+Update setup scriptes:
+ Only python modules are automatically added into release. So
+ please make sure you have added library directories are 
+ added to the setup scripts. Also make sure to add etc
+ files to setup scripts.
+ Probably we should make this happen automatically.
+
+Prerequisites:
+ install-deps: prepare dependencies
+ ./getsrc.py
+
+Test release:
+ Put more info here.

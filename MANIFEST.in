@@ -1,0 +1,58 @@
+recursive-include * *
+include *
+prune CVS
+recursive-exclude * doc
+recursive-exclude * *.log
+recursive-exclude * *.pdf
+recursive-exclude * *.html
+recursive-exclude * *.ps
+recursive-exclude * *.pyc
+recursive-exclude * *~
+recursive-exclude build *
+prune */build
+prune */*/build
+prune */*/*/build
+recursive-exclude dist *
+recursive-exclude build *
+recursive-exclude src/distutils-adpt/products *
+
+exclude *.log 
+exclude *.pyc 
+prune CVS 
+exclude MANIFEST 
+exclude *~
+prune */doc
+prune */*/doc
+prune */docs
+prune distutils_adpt/products
+prune ?svn
+prune */?svn
+prune */*/?svn
+prune */*/*/?svn
+prune */*/*/*/?svn
+prune */*/*/*/*/?svn
+prune */*/*/*/*/*/?svn
+prune */*/*/*/*/*/*/?svn
+prune */*/*/*/*/*/*/*/?svn
+prune *.svn
+prune */*.svn
+prune */*/*.svn
+prune */*/*/*.svn
+prune */*/*/*/*.svn
+prune */*/*/*/*/*.svn
+prune */*/*/*/*/*/*.svn
+prune */*/*/*/*/*/*/*.svn
+global-exclude .svn
+global-exclude .svn/*
+global-exclude .svn/*/*
+global-exclude .svn/*/*/*
+
+prune src/ins-data
+#prune src/simulation/Examples
+#prune src/simulation/Examples/*
+#prune src/simulation/Examples/*/*
+#prune src/simulation/Examples/*/*/*
+#global-exclude src/simulation/Examples/*
+#global-exclude src/simulation/Examples/*/*
+#global-exclude src/simulation/Examples/*/*/*
+

@@ -1,0 +1,83 @@
+Shell scripts in this directory are good hints for experienced linux
+users to build and install prerequisites for DANSE simulation software. 
+If you 
+are not an experienced linux user, you might end up wasting your 
+time trying to build those packages. A better solution is to install
+the binary DANSE simulation software, which includes all dependencies.
+
+If you are so determined to go on... Congratulations! You are
+now starting an exciting adventure :)
+
+
+1. build and install python if you don't have one installed in
+your system. A better solution is to install python using tools
+like apt or yum. You really want to build from source? OK. Please
+follow install-python.sh. It turns out to be not that difficult...
+
+
+2, numpy. It is quite easy. It might be installed already. 
+Try the following:
+
+ $ python
+ >>> import numpy
+
+If it fails, please follow install-numpy.py to install.
+
+
+3. (Optional), wxPython. That is not too hard either. Just a little too many
+commands. Revise and run install-wxPython.sh might be a good idea.
+
+
+4. matplotlib. That is the hard part... Good luck... Depending
+on your platform, you might need to install gtk2-devel (linux) 
+or freetype2 (Mac OS X) yourself before you can successfully build
+matplotlib. Anyway, revise and follow install-matplotlib.py is a good
+idea. Install binary package might be an even better idea...
+There are binary packages in modern linux distribution like FC6.
+
+
+5. HDF5. The tricky part is we need c++ shared library. Look
+into install-hdf5.sh and you will find hints how to do that.
+!!! Aftre installation, please define environement variable
+!!! HDF5_DIR. For example:
+!!!
+!!!   export HDF5_DIR=/software/hdf5
+!!!   export LD_LIBRARY_PATH=/software/hdf5/lib:$LD_LIBRARY_PATH
+!!!
+!!! You can use hdf5-envs.sh as an example.
+!!! Please add those env vars to your .bashrc
+!!! as well.
+
+
+6. cctbx. Cctbx installation does not follow the 
+"configure; make; make install" routine. Please take a look at 
+the install-cctbx.sh.
+!!! After installation, please revise cctbx-envs.sh to point
+!!! CCTBX_ROOT to the installation root of cctbx. Please
+!!! source cctbx-envs.sh before you install DANSE simulation software.
+!!! Also please source cctbx-envs.sh in your .bashrc file.
+
+
+7. McStas. Please follow install-McStas.sh to install McStas.
+Make sure environement variables in mcstas-envs.sh are defined
+in your shell. Add appropriate environement variables.
+Use McStas-envs.sh as an example.
+
+
+Wow, you have done all of them! Congratulations! Now you can build 
+ARCS reduction software.
+
+
+This simulation software also includes the reduction software.
+If you need to use reduction software to reduce PHAROS data, 
+you also need tool h4toh5. The original
+PHAROS data are in HDF4 format. The current ARCS reduction software
+only reads HDF5 format, however. This tool can convert PHAROS data file
+from HDF4 format to HDF5 format. That tool is not
+needed when building ARCS, but you will need them if you want
+to use ARCS reduction software to reduce PHAROS data.
+To do that, you have to install HDF4 and h4h5tools. Please
+follow scripts install-hdf4.sh and install-h4h5tools.sh.
+HDF4 source release chokes sometimes and complains about missing 
+math functions. You will need to add -lm to solve that.
+

@@ -1,0 +1,15 @@
+This directory contains a good template to create a releaser.
+To adapt this releaser to a new software, following files must be
+edited:
+
+setup.py                     main setup script
+deps.py                      external dependencies
+packages/__init__.py         what packages are involved in this software
+packages/*.py                for each package involved, create a module here
+paths                        paths of external packages not covered in distutils_adpt.paths
+
+
+To create source distribution:
+
+  $ python setup.py sdist
+
