@@ -4,7 +4,6 @@
 #a bundle is a collection of packages
 bundleInfo = {
     "Prerequisite": [
-    'distutils-adpt',
     "config",
     ],
     
@@ -16,6 +15,7 @@ bundleInfo = {
     "basic": [
     'stdVector',
     'array_kluge',
+    'luban',
     'histogram',
     ],
 
@@ -25,17 +25,11 @@ bundleInfo = {
     ],
     
     "Core": [
-    'cctbx_adpt',
-    'simulation',
-    'mcstas',
+    'instrument',
+    'sampleassembly',
+    'mcvine',
     ],
 
-    "Reduction" : [
-    'instrument',
-    'measurement',
-    'reduction',
-    #'ins-data',
-    ],
     }
 
 
@@ -48,7 +42,6 @@ bundleNames = [
     'basic',
     'Nexus',
     'Core',
-    'Reduction',
     ]
 
 

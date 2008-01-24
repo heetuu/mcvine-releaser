@@ -1,2 +1,2 @@
-name = "simulation"
-version = "alpha"
+name = "mcvine"
+version = "version?"

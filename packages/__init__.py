@@ -27,6 +27,12 @@
 #   deps = names of dependencies
 #   checkoutCmd = command to check out the package from repository
 
+import sys, os
+f = __file__
+d = os.path.dirname( f )
+p = os.path.abspath( os.path.join( d, '..', '..') )
+sys.path = [p] + sys.path
+del f,d,p
 
 from bundles import *
 
@@ -94,7 +100,11 @@ def update( packageNames, dest ):
 
 
 def patch( packageName, dest ):
+    print 'patching %s' % packageName
     patch = packageInfoTable[ packageName ].get( 'patch' )
+    path = packageInfoTable[ packageName ].get( 'path' )
+    import os
+    dest = os.path.join( dest, path )
     if patch: patch(dest)
     else: "No patch for package %s" % packageName
     return
