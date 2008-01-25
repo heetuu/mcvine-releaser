@@ -1,0 +1,1 @@
+../../common/install-deps/install-wxPython.sh
