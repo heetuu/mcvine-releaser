@@ -11,25 +11,22 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
 
-PROJECT = simulation-bundle
+PROJECT = mcvine
 
 # directory structure
 
 BUILD_DIRS = \
 	pythia-0.8\
-	pyregui\
-	array_kluge\
-	stdVector\
-	hdf5fs\
-	nx5\
-	histogram\
-	measurement\
-	instrument\
-	reduction\
-	pyregui\
-	cctbx_adpt\
-	simulation\
-	mcstas\
+	pyregui/trunk\
+	array_kluge/trunk\
+	stdVector/trunk\
+	hdf5fs/trunk\
+	nx5/trunk\
+	histogram/trunk\
+	instrument/trunk\
+	inelastic/sample/branches/sampleassembly\
+	MCViNE/trunk\
+
 
 OTHER_DIRS = \
 

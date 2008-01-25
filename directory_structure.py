@@ -15,7 +15,7 @@ path = os.path.dirname( __file__ )
 rootname = os.path.split(path)[-1]
 
 _tree = (
-    rootname, "simulation releaser tree", \
+    rootname, "mcvine releaser tree", \
     [
      ('src', 'sources', []),
      ('install-deps', 'installation scripts for external dependencies', []),
@@ -39,3 +39,4 @@ print "-Initializing directory structure representation"
 tree = createTree( os.path.dirname(__file__) )
 
 printTree(tree)
+

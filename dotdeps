@@ -1,0 +1,15 @@
+DEPSROOT=$PWD/deps
+echo $DEPSROOT
+export PATH=$DEPSROOT/bin:$PATH
+
+if [ "$PYTHONPATH" = "" ]
+then
+  export PYTHONPATH=$DEPSROOT/python
+else
+  export PYTHONPATH=$DEPSROOT/python:$PYTHONPATH
+fi
+export LD_LIBRARY_PATH=$DEPSROOT/lib:$LD_LIBRARY_PATH
+export DYLD_LIBRARY_PATH=$DEPSROOT/lib:$DYLD_LIBRARY_PATH
+export HDF5_INCDIR=$DEPSROOT/include
+export HDF5_LIBDIR=$DEPSROOT/lib
+export NUMPY_INCDIR=$DEPSROOT/python/numpy/core/include

@@ -1,0 +1,117 @@
+# -*- sh -*-
+
+source dotdeps
+
+#======================================================
+#
+# Basic development settings
+#
+export DEVELOPER=$USER                 # developer name            
+export RELEASER=$HOME/dv/danse/buildInelast/mcvine
+# export DV_DIR=${HOME}                  # root development directory
+export DV_DIR=${HOME}/dv               # root development directory
+
+#======================================================
+#
+# Generic tools installation directory for 3rd party software
+#
+
+#======================================================
+#
+# Basic build procedure settings
+#
+  export BLD_ROOT=${RELEASER}/tmp/builds       # root directory of builds
+# export BLD_CONFIG=$BLD_ROOT/config     # location of build procedure files
+  export BLD_CONFIG=${DV_DIR}/config     # location of build procedure files
+# export TARGET=debug,mpi                # build target options
+  export TARGET=shared,opt,debug         # build target options
+#  export TARGET=shared,opt
+  export TEMPLATES_DIR=${DV_DIR}/templates
+export PATH=$TEMPLATES_DIR/bin:$PATH
+
+  #export EXPORT_ROOT=${TOOLS_DIR}/pythia-${PYTHIA_VERSION}
+  export EXPORT_ROOT=${RELEASER}/export
+
+# Add build procedure and products directories to PATH variables
+  export PATH=${BLD_CONFIG}/make:${PATH}
+  export PATH=${PATH}:${PYTHIA_DIR}/scripts:${EXPORT_ROOT}/bin
+  export LD_LIBRARY_PATH=${EXPORT_ROOT}/lib:${LD_LIBRARY_PATH}
+
+#======================================================
+#
+# CVS setup
+#
+  export CVS_RSH=ssh
+
+#======================================================
+#
+# Python support
+#
+  export PYTHON_VERSION=2.3
+  #export PYTHON_DIR=/System/Library/Frameworks/Python.framework/Versions/Current
+# export PYTHON_DIR=$TOOLS_DIR/python-2.3.4  # Python installation directory
+ export PYTHON_DIR=/usr
+  export PYTHON_LIBDIR=${PYTHON_DIR}/lib64/python${PYTHON_VERSION}
+  export PYTHON_INCDIR=${PYTHON_DIR}/include/python${PYTHON_VERSION}
+
+# Add Python to PATH variables
+  #export PATH=$PYTHON_DIR/bin:$PATH
+  if [ "$PYTHONPATH" = "" ]
+  then
+    export PYTHONPATH=$EXPORT_ROOT/python
+  else
+    export PYTHONPATH=${PYTHONPATH}:${EXPORT_ROOT}/python
+  fi
+  export PYTHONSTARTUP=${HOME}/.python
+
+#======================================================
+#
+# MPI/mpich support
+#
+  # export MPI_VERSION=1.2.5
+  #  export MPI_DIR=${TOOLS_DIR}/mpich-${MPI_VERSION}
+ export MPI_DIR=$HOME/software/mpich2-1.0.6p1
+  export MPI_INCDIR=$MPI_DIR/include
+  export MPI_LIBDIR=$MPI_DIR/lib
+
+# Add MPI to PATH variables if installed in non-standard location.
+  export PATH=$MPI_DIR/bin:$PATH
+  export LD_LIBRARY_PATH=$MPI_DIR/lib:$LD_LIBRARY_PATH
+  export MANPATH=$MPI_DIR/man:$MANPATH
+
+#======================================================
+#
+# Optional compilers (uncomment as needed)
+#
+  export GNU_MAKE=make
+
+
+# GCC 3.x Compiler
+  export TARGET_F77=gcc
+  # export TARGET_F77=gcc-3.0
+  # export TARGET_CC=gcc-3.0
+  # export TARGET_CXX=gcc-3.0
+  # export GCC_DIR=/usr/local/gnu            # GCC installation directory
+  # export PATH=$GCC_DIR/bin:$PATH
+  # export LD_LIBRARY_PATH=$GCC_DIR/lib:$LD_LIBRARY_PATH
+
+#======================================================
+#
+# Optional external package settings (uncomment as needed)
+#
+
+# TeX
+# export TEX_DIR=/usr/bin/tex
+  # export TEX_DIR=${TOOLS_DIR}/tex
+# export BIBTEX_DIR=/usr/bin/bibtex
+  # export BIBTEX_DIR=${TOOLS_DIR}/bibtex
+  # export DOCUMENTS_DIR=${HOME}/documents
+#  export DANSE_PUBS_DIR=${DV_DIR}/danse/publications
+#  export TEXINPUTS=:${DANSE_PUBS_DIR}/texinputs//:${DOCUMENTS_DIR}/styles//:${TEX_DIR}//:.
+  # export BSTINPUTS=${DOCUMENTS_DIR}/styles//:${BIBTEX_DIR}//:.
+
+
+#export MCSTAS_PACKAGE=$DV_DIR/arcs/packages/mcstas
+
+#docbook
+#source $HOME/.docbook-envs
