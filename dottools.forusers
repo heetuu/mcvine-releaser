@@ -1,0 +1,12 @@
+# -*- sh -*-
+
+#this script must be run in the current directory
+
+source ./dotdeps
+
+EXPORT_ROOT=$PWD/export
+
+export PATH=$EXPORT_ROOT/bin:$PATH
+export PYTHONPATH=$EXPORT_ROOT/modules:$PYTHONPATH
+export LD_LIBRARY_PATH=$EXPORT_ROOT/lib:$LD_LIBRARY_PATH
+export MCVINE=$EXPORT_ROOT

@@ -5,3 +5,6 @@ mkdir -p tmp/builds
 cd src
 mm
 cd -
+cd softwareinstallationinfodb
+mm
+cd -

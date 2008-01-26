@@ -10,6 +10,20 @@ else
 fi
 export LD_LIBRARY_PATH=$DEPSROOT/lib:$LD_LIBRARY_PATH
 export DYLD_LIBRARY_PATH=$DEPSROOT/lib:$DYLD_LIBRARY_PATH
+
+#hdf5
 export HDF5_INCDIR=$DEPSROOT/include
 export HDF5_LIBDIR=$DEPSROOT/lib
+
+#numpy
 export NUMPY_INCDIR=$DEPSROOT/python/numpy/core/include
+
+#boostpython
+export BOOSTPYTHON_INCDIR=$DEPSROOT/include
+export BOOSTPYTHON_LIBDIR=$DEPSROOT/lib
+
+#mcstas
+export MCSTAS_COMPONENT_LIBDIR=$DEPSROOT/lib/mcstas
+
+#mcvine
+export MCVINEDEPS=$DEPSROOT

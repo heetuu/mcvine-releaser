@@ -1,0 +1,7 @@
+run build.sh
+
+add softwareinstallationinfodb package to $EXPORT_ROOT/modules
+
+copy header tree to $EXPORT_ROOT/include
+
+mcstas component library??

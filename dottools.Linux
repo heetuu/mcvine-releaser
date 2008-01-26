@@ -58,9 +58,9 @@ export PATH=$TEMPLATES_DIR/bin:$PATH
   #export PATH=$PYTHON_DIR/bin:$PATH
   if [ "$PYTHONPATH" = "" ]
   then
-    export PYTHONPATH=$EXPORT_ROOT/python
+    export PYTHONPATH=$EXPORT_ROOT/modules
   else
-    export PYTHONPATH=${PYTHONPATH}:${EXPORT_ROOT}/python
+    export PYTHONPATH=${PYTHONPATH}:${EXPORT_ROOT}/modules
   fi
   export PYTHONSTARTUP=${HOME}/.python
 
