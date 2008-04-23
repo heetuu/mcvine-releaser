@@ -17,6 +17,7 @@ bundleInfo = {
     'bpext',
     'luban',
     'histogram',
+    'ins_crystal',
     ],
 
     "Nexus": [
