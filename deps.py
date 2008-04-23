@@ -1,21 +1,14 @@
 
-externPackageInfo = {
-    'numpy': "Numerical Python. see http://numpy.scipy.org/",
-    'cctbx': "crystallography toolbox",
-    'McStas': "riso McStas",
-    }
-
-
 packages = [
     'numpy',
-    'cctbx',
-    'McStas',
+    'boostpython',
+    #'McStas',
     ]
 
 descriptions = {
     'numpy': "Numerical Python. see http://numpy.scipy.org/",
-    'cctbx': 'Crystallography tool box',
-    'McStas': 'Risoe McStas',
+    'boostpython': 'Boostpython',
+    #'McStas': 'Risoe McStas',
     }
 
 
@@ -30,6 +23,6 @@ installers = {}
 from utils.installers import get as get_installer
 
 installers[ 'numpy' ] = get_installer( 'numpy', 'src' )
-installers[ 'cctbx' ] = get_installer( 'cctbx', 'src' )
-installers[ 'McStas' ] = get_installer( 'McStas', 'src' )
+installers[ 'boostpython' ] = get_installer( 'boostpython', 'src' )
+#installers[ 'McStas' ] = get_installer( 'McStas', 'src' )
 

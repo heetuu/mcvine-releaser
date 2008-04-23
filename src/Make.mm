@@ -1,41 +1,33 @@
-# -*- Makefile -*-
-#
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#
-#                               Michael A.G. Aivazis
-#                        California Institute of Technology
-#                        (C) 1998-2004  All Rights Reserved
-#
-# <LicenseText>
-#
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#
-
 PROJECT = mcvine
+
+
+PROJ_TIDY += *.log *.tmp
 
 # directory structure
 
+
 BUILD_DIRS = \
-	pythia-0.8\
-	pyregui/trunk\
-	array_kluge/trunk\
-	stdVector/trunk\
-	hdf5fs/trunk\
-	nx5/trunk\
-	histogram/trunk\
-	instrument/trunk\
-	inelastic/sample/branches/sampleassembly\
-	MCViNE/trunk\
+	ctrl/config/branches/with_doxygen_and_docbook_support \
+	pyre/branches/patches-from-jiao \
+	pyregui/trunk \
+	inelastic/dsm \
+	inelastic/bpext \
+	pyregui/trunk/luban \
+	histogram/trunk \
+	hdf5fs/trunk \
+	nx5/trunk \
+	instrument/trunk \
+	common/dataObjects/sample/branches/sampleassembly \
+	MCViNE/trunk \
 
 
-OTHER_DIRS = \
 
-RECURSE_DIRS = $(BUILD_DIRS) $(OTHER_DIRS)
+RECURSE_DIRS = $(BUILD_DIRS)
 
 #--------------------------------------------------------------------------
 #
 
-all:
+all: 
 	BLD_ACTION="all" $(MM) recurse
 
 distclean::
@@ -50,13 +42,7 @@ tidy::
 docs::
 	BLD_ACTION="docs" $(MM) recurse
 
-export::
-	BLD_ACTION="export" $(MM) recurse
-
-test::
-	BLD_ACTION="test" $(MM) recurse
-
 # version
-# $Id: Make.mm 616 2007-05-13 18:05:03Z linjiao $
+# $Id: Make.mm 1363 2007-07-29 14:24:24Z linjiao $
 
 # End of file

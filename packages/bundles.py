@@ -15,8 +15,6 @@ bundleInfo = {
     "basic": [
     'dsm',
     'bpext',
-    'stdVector',
-    'array_kluge',
     'luban',
     'histogram',
     ],

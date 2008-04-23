@@ -23,16 +23,15 @@
 #
 #   setupScript = name of distutils-adpt setup script
 #   path = path in 'src' directory
-#   sub_modules = names of sub modules (This is usually None. Only useful for DANSE:graphics)
 #   deps = names of dependencies
 #   checkoutCmd = command to check out the package from repository
 
 import sys, os
-f = __file__
-d = os.path.dirname( f )
-p = os.path.abspath( os.path.join( d, '..', '..') )
-sys.path = [p] + sys.path
-del f,d,p
+## f = __file__
+## d = os.path.dirname( f )
+## p = os.path.abspath( os.path.join( d, '..', '..') )
+## sys.path = [p] + sys.path
+## del f,d,p
 
 from bundles import *
 
@@ -59,13 +58,9 @@ def createTable(packageNames):
         
 
 #a dictionary of infos of packages
-#   name: (setup script name,  relative path of the package, sub modules, dependencies)
+#   name: (setup script name,  relative path of the package, dependencies)
 packageInfoTable = createTable( packageNames )
     
-
-# modules is a dictionary of { package: sub_modules }
-modules = {}
-for name in packageNames: modules[name] = packageInfoTable[ name ]['sub_modules']
 
 
 def checkout( packageNames, dest ):
@@ -84,7 +79,6 @@ def checkout( packageNames, dest ):
 
 def update( packageNames, dest ):
     """update packages at "dest" directory"""
-    import os
     for package in packageNames:
         info = packageInfoTable[ package ]
         p = os.path.join( dest, info['path'] )
@@ -102,15 +96,12 @@ def update( packageNames, dest ):
 def patch( packageName, dest ):
     print 'patching %s' % packageName
     patch = packageInfoTable[ packageName ].get( 'patch' )
-    path = packageInfoTable[ packageName ].get( 'path' )
-    import os
+    path = packageInfoTable[ packageName ][ 'path' ]
     dest = os.path.join( dest, path )
     if patch: patch(dest)
     else: "No patch for package %s" % packageName
     return
 
-
-import os
 
 
 # version
