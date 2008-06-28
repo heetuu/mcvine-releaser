@@ -14,6 +14,7 @@ bundleInfo = {
 
     "basic": [
     'dsm',
+    'numpyext',
     'bpext',
     'luban',
     'histogram',
