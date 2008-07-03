@@ -11,9 +11,11 @@ BUILD_DIRS = \
 	pyre/branches/patches-from-jiao \
 	pyregui/trunk \
 	inelastic/dsm \
+	inelastic/numpyext \
 	inelastic/bpext \
 	pyregui/trunk/luban \
 	histogram/trunk \
+	inelastic/crystal \
 	hdf5fs/trunk \
 	nx5/trunk \
 	instrument/trunk \
