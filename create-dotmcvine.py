@@ -26,6 +26,8 @@ class Creater:
     def build_software_installation_info_db(self):
         from packages import mcvine
         cmds = [ 
+            'source  %s' % os.path.join(
+            self.src_root, 'dottools' ),
             'cd %s' % os.path.join(
             self.src_root,
             mcvine.path, 'packages', 'softwareinstallationinfodb',
@@ -33,7 +35,7 @@ class Creater:
             'mm',
             'cd -',
             ]
-        cmd = ' && '.join( cmds )
+        cmd = 'bash -c "' + ' && '.join( cmds ) + '"'
         if (os.system(cmd)): raise "%r failed" % cmd
         return
     
