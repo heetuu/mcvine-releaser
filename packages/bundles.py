@@ -26,6 +26,10 @@ bundleInfo = {
     'nx5',
     ],
     
+    "kernel-deps": [
+    'sansmodels',
+    ],
+
     "Core": [
     'instrument',
     'sampleassembly',
@@ -44,6 +48,7 @@ bundleNames = [
     'basic',
     'Nexus',
     'Core',
+    'kernel-deps',
     ]
 
 

@@ -21,6 +21,7 @@ BUILD_DIRS = \
 	instrument/trunk \
 	common/dataObjects/sample/branches/sampleassembly \
 	MCViNE/trunk \
+	sans/trunk/sansmodels/src \
 
 
 

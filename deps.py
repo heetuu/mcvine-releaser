@@ -3,7 +3,7 @@ packages = [
     'py_numpy',
     'boostpython',
     'HDF5',
-    'mpich2',
+    #'mpich2',
     #'McStas',
     ]
 
