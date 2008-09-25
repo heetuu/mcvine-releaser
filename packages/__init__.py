@@ -65,31 +65,40 @@ packageInfoTable = createTable( packageNames )
 
 def checkout( packageNames, dest ):
     """check out packages at "dest" directory"""
-    for package in packageNames:
-        cmd = "cd %s; " % dest
-        cocmd = packageInfoTable[ package ]['checkoutCmd']
-        if cocmd:
-            cmd += cocmd
-            if os.system(cmd): print "Unable to check out %s" % package
-            pass
-        patch(package, dest)
-        continue
+    for package in packageNames: checkout_one(package, dest)
+    return
+
+
+def checkout_one( packagename, dest ):
+    cmd = "cd %s; " % dest
+    cocmd = packageInfoTable[ packagename ]['checkoutCmd']
+    if cocmd:
+        cmd += cocmd
+        if os.system(cmd): print "Unable to check out %s" % package
+        pass
+    patch(packagename, dest)
     return
 
 
 def update( packageNames, dest ):
     """update packages at "dest" directory"""
-    for package in packageNames:
-        info = packageInfoTable[ package ]
-        p = os.path.join( dest, info['path'] )
-        cmd = "cd %s; " % p
-        udcmd = info['updateCmd']
-        if udcmd:
-            cmd += udcmd
-            if os.system(cmd): print "Unable to update %s" % package
-            pass
-        patch(package, dest)
-        continue
+    for package in packageNames: update_one(package, dest)
+    return
+
+
+def update_one(packagename, dest):
+    info = packageInfoTable[ packagename ]
+    p = os.path.join( dest, info['path'] )
+    if not os.path.exists(p):
+        checkout_one(packagename, dest)
+        return
+    cmd = "cd %s; " % p
+    udcmd = info['updateCmd']
+    if udcmd:
+        cmd += udcmd
+        if os.system(cmd): print "Unable to update %s" % packagename
+        pass
+    patch(packagename, dest)
     return
 
 
