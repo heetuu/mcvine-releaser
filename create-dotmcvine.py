@@ -55,8 +55,7 @@ class Creater:
             'source "%s"' % envs_sh,
             'export DV_DIR="%s"' % self.src_root,
             'export MCSTAS_COMPONENT_LIBDIR="%s"' % os.path.join(
-            self.src_root, 'MCViNE', 'trunk', 'packages', 'legacycomponents',
-            'mcstas2', 'share', 'McStas-Components' ),
+            self.export_root, 'share', 'mcstas2', 'McStas-Components' ),
             ]
 
         return contents

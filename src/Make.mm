@@ -7,21 +7,21 @@ PROJ_TIDY += *.log *.tmp
 
 
 BUILD_DIRS = \
-	ctrl/config/branches/with_doxygen_and_docbook_support \
-	pyre/branches/patches-from-jiao \
-	pyregui/trunk \
-	inelastic/dsm \
-	inelastic/numpyext \
-	inelastic/bpext \
-	pyregui/trunk/luban \
-	histogram/trunk \
-	inelastic/crystal \
-	hdf5fs/trunk \
-	nx5/trunk \
-	instrument/trunk \
-	common/dataObjects/sample/branches/sampleassembly \
-	MCViNE/trunk \
-	sans/trunk/sansmodels/src \
+	config \
+	pyre \
+	pyregui \
+	dsm \
+	numpyext \
+	bpext \
+	luban \
+	histogram \
+	crystal \
+	hdf5fs \
+	nx5 \
+	instrument \
+	sampleassembly \
+	mcvine \
+	sansmodels \
 
 
 
