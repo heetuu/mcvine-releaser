@@ -3,7 +3,7 @@ deps = ("config",)
 
 from utils import repoutils
 reponame = 'pyre'
-branch = "branches/patches-from-jiao"
+branch = "pythia-0.8"
 path, checkoutCmd, updateCmd = repoutils.svn.repoinfo( reponame, branch )
 
 

@@ -74,7 +74,7 @@ def checkout_one( packagename, dest ):
     cocmd = packageInfoTable[ packagename ]['checkoutCmd']
     if cocmd:
         cmd += cocmd
-        if os.system(cmd): print "Unable to check out %s" % package
+        if os.system(cmd): print "Unable to check out %s" % packagename
         pass
     patch(packagename, dest)
     return
