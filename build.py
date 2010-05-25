@@ -21,10 +21,6 @@ def main():
 
     from utils.build import build_release, clean_up
     build_release( pwd )
-
-    # create envs.sh
-    os.system('./create-envssh.py')
-    os.system('./create-dotmcvine.py')
     return
 
 
