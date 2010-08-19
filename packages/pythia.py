@@ -1,10 +1,10 @@
-name = "pythia"
+name = "pyre"
 deps = ("config",)
 
-from utils import repoutils
+from utils.package import repoutils
 reponame = 'pyre'
 branch = "pythia-0.8"
-path, checkoutCmd, updateCmd = repoutils.svn.repoinfo( reponame, branch )
+repo = repoutils.svn.getPackageRepository(reponame, branch, name=name)
 
 
 
