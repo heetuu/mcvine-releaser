@@ -4,7 +4,7 @@
 #
 #                                   Jiao Lin
 #                      California Institute of Technology
-#                        (C) 2006  All Rights Reserved
+#                       (C) 2006  All Rights Reserved
 #
 # {LicenseText}
 #
@@ -12,16 +12,9 @@
 #
 
 
-# script to update release
+# script to update sources
 
-
-def main():
-    from packages import packageNames, update
-    from directory_structure import tree
-    srcRt = tree.search( "sources" ).path
-    update(packageNames, srcRt)
-    return
-
+from utils.scripts.updatesrc import main
 
 if __name__ == "__main__": main()
 

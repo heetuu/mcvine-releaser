@@ -21,13 +21,8 @@ bundleInfo = {
     'ins_crystal',
     ],
 
-    "Nexus": [
-    'hdf5fs',
-    'nx5',
-    ],
-    
     "kernel-deps": [
-    'sansmodels',
+    'sansmodels',  # optional
     ],
 
     "Core": [
