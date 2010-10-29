@@ -41,7 +41,6 @@ bundleNames = [
     'Prerequisite',
     'Pythia',
     'basic',
-    'Nexus',
     'Core',
     'kernel-deps',
     ]
