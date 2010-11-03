@@ -12,9 +12,11 @@
 #
 
 
-from utils.scripts.build import main
-
-if __name__ == '__main__': main()
+if __name__ == '__main__':
+    from utils.scripts.build import main
+    main()
+    from build_envs import main
+    main()
 
 
 # version
