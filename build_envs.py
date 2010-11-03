@@ -11,8 +11,11 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
 
-from utils.paths.boostpython import paths as boostpython_paths
-bproot = boostpython_paths.root
+try:
+    from utils.paths.boostpython import paths as boostpython_paths
+    bproot = boostpython_paths.root
+except:
+    bproot = '$deps'
 
 template = """
 export_root=%(export_root)s
