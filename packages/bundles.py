@@ -18,7 +18,7 @@ bundleInfo = {
     'bpext',
     'luban',
     'histogram',
-    'ins_crystal',
+    'ins_matter',
     ],
 
     "kernel-deps": [
