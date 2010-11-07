@@ -15,28 +15,27 @@ try:
     from utils.paths.boostpython import paths as boostpython_paths
     bproot = boostpython_paths.root
 except:
-    bproot = '$deps'
-
-template = """
-export_root=%(export_root)s
-deps=$export_root/deps
-
-export %(package)s_DIR=$export_root
-
-export PYRE_DIR=$export_root
-export PATH=$export_root/bin:$deps/bin:$PATH
-export LD_LIBRARY_PATH=$export_root/lib:$deps/lib:$LD_LIBRARY_PATH
-export DYLD_LIBRARY_PATH=$export_root/lib:$deps/lib:$DYLD_LIBRARY_PATH
-export PYTHONPATH=$export_root/modules:$deps/python:$PYTHONPATH
-"""
-template += """
-export BOOSTPYTHON_LIBDIR=%s/lib
-export BOOSTPYTHON_INCDIR=%s/include
-""" % (bproot, bproot)
+    bproot = None
 
 
-from utils.scripts.build_envs import createMain
-main = createMain('mcvine', template)
+from utils.scripts.build_envs import createMain, createEnvVarOps
+
+def factory(package, export):
+    ops = createEnvVarOps(package, export)
+    from utils.envvars.operations import Set
+    import os
+    global bproot
+    if bproot is None:
+        deps = os.path.join(export, 'deps')
+        bproot = deps
+    bp_inc = os.path.join(bproot, 'include')
+    bp_lib = os.path.join(bproot, 'lib')
+    ops.append(Set('BOOSTPYTHON_INCDIR', bp_inc))
+    ops.append(Set('BOOSTPYTHON_LIBDIR', bp_lib))
+    return ops
+
+main = createMain('mcvine', envvarops_factory=factory )
+
 
 if __name__ == '__main__': main()
 
