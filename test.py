@@ -4,8 +4,8 @@ from utils.datastore import open
 build_info = open('build_info')
 export = build_info.get('export_root', 'EXPORT')
 
-from utils.scripts.build_envs import createEnvVarOps
-ops = createEnvVarOps('mcvine', export)
+from build_envs import factory
+ops = factory('mcvine', export)
 from utils.envvars import perform
 perform(ops)
 
