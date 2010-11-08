@@ -13,5 +13,13 @@ import subprocess, shlex
 cmd = 'python run-cxx-tests.py'
 args = shlex.split(cmd)
 p = subprocess.Popen(args, cwd='src/mcvine')
-while p.poll() is None:
+
+while 1:
+    rt = p.poll()
     p.communicate()
+    if rt is None: continue
+    break
+
+if rt: 
+    import sys
+    sys.exit(rt)
