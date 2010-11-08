@@ -9,17 +9,40 @@ ops = createEnvVarOps('mcvine', export)
 from utils.envvars import perform
 perform(ops)
 
-import subprocess, shlex
-cmd = 'python run-cxx-tests.py'
-args = shlex.split(cmd)
-p = subprocess.Popen(args, cwd='src/mcvine')
 
-while 1:
-    rt = p.poll()
-    p.communicate()
-    if rt is None: continue
-    break
+def execute(cmd, where):
+    import subprocess, shlex
+    args = shlex.split(cmd)
+    p = subprocess.Popen(args, cwd=where)
 
-if rt: 
+    while 1:
+        rt = p.poll()
+        p.communicate()
+        if rt is None: continue
+        break
+
+    return rt
+
+cxxfailed = execute(
+    cmd = 'python run-cxx-tests.py',
+    where='src/mcvine',
+    )
+
+pyunittestfailed = execute(
+    cmd = 'python run-unittests.py src/mcvine/packages/mcni',
+    where = '.',
+    )
+
+
+if cxxfailed or pyunittestfailed:
+
+    print
+    print '='*60
+    if cxxfailed:
+        print '* c++ test failed'    
+    if pyunittestfailed:
+        print '* python unit tests failed'
+    print '='*60
+    
     import sys
-    sys.exit(rt)
+    sys.exit(1)
