@@ -15,17 +15,28 @@ def exitonerror(result):
 
 
 def main():
-    argv = sys.argv
-    if len(argv) > 2: raise NotImplementedError
-    if len(argv) == 2:
-        path = argv[1]
+    from optparse import OptionParser
+    parser = OptionParser()
+    parser.add_option("", "--exclude-dirs", dest="exclude_dirs",
+                      help = 'patterns to exclude directories',)
+    
+    options, args = parser.parse_args()
+    
+    if len(args) > 1: raise NotImplementedError
+    if len(args) == 1:
+        path = args[0]
     else:
         path = os.curdir
-
+        
+    exclude_dirs = options.exclude_dirs
+    if exclude_dirs:
+        exclude_dirs = exclude_dirs.split(',')
+    
     from utils.unittest.run_tests import runtests, printRsult
-    result = runtests(path)
+    result = runtests(path, exclude_dirs=exclude_dirs)
     printRsult(result)
     exitonerror(result)
+    
     return
 
 
