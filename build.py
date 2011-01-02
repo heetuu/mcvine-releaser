@@ -12,12 +12,25 @@
 #
 
 
-if __name__ == '__main__':
+def main():
+    # build
     from utils.scripts.build import main
-    main()
-    from build_envs import main
+    print ">>> building mcvine"
     main()
 
+    # build envs.sh
+    from build_envs import main
+    print ">>> building environment-setup script"
+    main()
+
+    # build all mcstas components
+    print ">>> building all mcvine-wrapped mcstas components"
+    import os
+    os.system('./build_all_mcstas_components.sh')
+    return
+
+
+if __name__ == '__main__': main()
 
 # version
 __id__ = "$Id$"
