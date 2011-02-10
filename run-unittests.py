@@ -19,6 +19,10 @@ def main():
     parser = OptionParser()
     parser.add_option("", "--exclude-dirs", dest="exclude_dirs",
                       help = 'patterns to exclude directories',)
+    parser.add_option('', '--skip-long-tests', dest='skip_long_tests',
+                      action = 'store_true',
+                      help = 'when on, skip tests that take long time to run',
+                      )
     
     options, args = parser.parse_args()
     
@@ -31,9 +35,11 @@ def main():
     exclude_dirs = options.exclude_dirs
     if exclude_dirs:
         exclude_dirs = exclude_dirs.split(',')
+
+    skip_long_tests = options.skip_long_tests
     
     from utils.unittest.run_tests import runtests, printRsult
-    result = runtests(path, exclude_dirs=exclude_dirs)
+    result = runtests(path, exclude_dirs=exclude_dirs, skip_long_tests=skip_long_tests)
     printRsult(result)
     exitonerror(result)
     
