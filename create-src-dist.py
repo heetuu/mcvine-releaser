@@ -1,0 +1,42 @@
+#!/usr/bin/env python
+
+
+# create source distribution
+
+# assumption:
+#  - unix
+#  - bash
+#  - python
+#  - tar
+#  - svn
+
+import os, sys
+
+
+def create(name):
+    if name.find('/') != -1:
+        raise ValueError, "bad directory name %s" % name
+    if os.path.exists(name):
+        raise IOError, "%s already exists" % name
+    cmd = ['svn co svn://danse.us/buildInelast/mcvine %s' % name]
+    cmd.append('cd %s' %name)
+    cmd.append('./getsrc.py')
+    cmd = ' && '.join(cmd)
+    if os.system(cmd):
+        raise RuntimeError, "%s failed" % cmd
+
+    from utils.build import clean_up
+    clean_up(name)
+
+    cmd = 'tar -czf %s.tgz %s' % (name, name)
+    if os.system(cmd):
+        raise RuntimeError, "%s failed" % cmd
+
+    import shutil
+    shutil.rmtree(name)
+    
+    return
+
+
+if __name__ == '__main__': 
+    create(sys.argv[1])
