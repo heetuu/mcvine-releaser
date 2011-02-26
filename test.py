@@ -47,3 +47,9 @@ if cxxfailed or pyunittestfailed:
     
     import sys
     sys.exit(1)
+
+else:
+
+    print
+    print '='*60
+    print 'All tests passed'
