@@ -1,14 +1,5 @@
 #!/usr/bin/env python
 
-from utils.datastore import open
-build_info = open('build_info')
-export = build_info.get('export_root', 'EXPORT')
-
-from build_envs import factory
-ops = factory('mcvine', export)
-from utils.envvars import perform
-perform(ops)
-
 
 def execute(cmd, where):
     import subprocess, shlex
@@ -23,33 +14,65 @@ def execute(cmd, where):
 
     return rt
 
-cxxfailed = execute(
-    cmd = 'python run-cxx-tests.py',
-    where='src/mcvine',
-    )
 
-pyunittestfailed = execute(
-    # cmd = 'python run-unittests.py src/mcvine/packages/mcni',
-    cmd = 'python run-unittests.py --exclude-dirs=sansmodel*,obsolete src/mcvine/packages',
-    where = '.',
-    )
+def runall():
+    # where is the <export>?
+    from utils.datastore import open
+    build_info = open('build_info')
+    export = build_info.get('export_root', 'EXPORT')
+
+    # set up env vars
+    from build_envs import factory
+    ops = factory('mcvine', export)
+    from utils.envvars import perform
+    perform(ops)
+
+    # cxx tests
+    cxxfailed = execute(
+        cmd = 'python run-cxx-tests.py',
+        where='src/mcvine',
+        )
+
+    # python unit tests
+    pyunittestfailed = execute(
+        # cmd = 'python run-unittests.py src/mcvine/packages/mcni',
+        cmd = 'python run-unittests.py --exclude-dirs=sansmodel*,obsolete src/mcvine/packages',
+        where = '.',
+        )
+
+    #
+    failed = cxxfailed or pyunittestfailed
+
+    # report
+    if failed:
+
+        print
+        print '='*60
+        if cxxfailed:
+            print '* c++ test failed'    
+        if pyunittestfailed:
+            print '* python unit tests failed'
+        print '='*60
+
+    else:
+
+        print
+        print '='*60
+        print 'All tests passed'
+        
+
+    return failed
 
 
-if cxxfailed or pyunittestfailed:
 
-    print
-    print '='*60
-    if cxxfailed:
-        print '* c++ test failed'    
-    if pyunittestfailed:
-        print '* python unit tests failed'
-    print '='*60
-    
-    import sys
-    sys.exit(1)
+def main():
+    failed = runall()
 
-else:
+    if failed:
+        import sys
+        sys.exit(1)
 
-    print
-    print '='*60
-    print 'All tests passed'
+    return
+
+
+if __name__ == '__main__': main()
