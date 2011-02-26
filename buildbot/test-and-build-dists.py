@@ -11,7 +11,10 @@ def main():
         import sys
         sys.exit(1)
 
-    cmd = './create-src-dist-snapshot.py'
+    import sys
+    argv = list(sys.argv)
+    argv[0] = './create-src-dist-snapshot.py'
+    cmd = ' '.join(argv)
     if os.system(cmd):
         raise RuntimeError, "%s failed"
 

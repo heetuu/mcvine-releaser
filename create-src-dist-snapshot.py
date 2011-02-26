@@ -10,11 +10,18 @@ def execute(cmd):
 
 
 def main():
+    import optparse
+    parser = optparse.OptionParser()
+    parser.add_option('-r', '--repo', dest = 'repo', help = 'package repository')
+    (opts, args) = parser.parse_args()
+
+    # create
     name = 'mcvine-src-dist'
     cmd = "./create-src-dist.py %s" % name
     execute(cmd)
+
     # upload to danse repository
-    dest = "login.cacr.caltech.edu:projects/danse/packages/dev_danse_us/"
+    dest = opts.repo or "login.cacr.caltech.edu:projects/danse/packages/dev_danse_us/"
     cmd = 'scp %s.tgz %s' % (name, dest)
     execute(cmd)
     return
