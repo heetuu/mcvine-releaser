@@ -38,9 +38,9 @@ def main():
 
     skip_long_tests = options.skip_long_tests
     
-    from utils.unittest.run_tests import runtests, printRsult
+    from utils.unittest.run_tests import runtests, printResult
     result = runtests(path, exclude_dirs=exclude_dirs, skip_long_tests=skip_long_tests)
-    printRsult(result)
+    printResult(result)
     exitonerror(result)
     
     return
