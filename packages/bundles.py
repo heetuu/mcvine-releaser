@@ -31,6 +31,10 @@ bundleInfo = {
     'mcvine',
     ],
 
+    "reduction": [
+    'drchops',
+    ],
+
     }
 
 
@@ -41,6 +45,7 @@ bundleNames = [
     'Prerequisite',
     'Pythia',
     'basic',
+    'reduction',
     'Core',
     'kernel-deps',
     ]
