@@ -6,6 +6,7 @@ packages = [
     # 'HDF5',
     'py_h5py',
     'mpich2',
+    'gsl',
     #'wxPython',
     #'McStas',
     ]
@@ -19,6 +20,7 @@ descriptions = {
     'mpich2': 'mpich2',
     'McStas': 'Risoe McStas',
     'wxPython': 'wx python',
+    'gsl': 'GNU scientific library',
     }
 
 
@@ -39,5 +41,6 @@ installers[ 'HDF5' ] = get_installer( 'HDF5', 'src' )
 installers[ 'py_h5py' ] = get_installer( 'py_h5py', 'src' )
 installers[ 'mpich2' ] = get_installer( 'mpich2', 'src' )
 installers[ 'wxPython' ] = get_installer( 'wxPython', 'src' )
+installers[ 'gsl' ] = get_installer( 'gsl', 'src' )
 #installers[ 'McStas' ] = get_installer( 'McStas', 'src' )
 
