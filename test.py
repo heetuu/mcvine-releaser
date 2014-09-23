@@ -29,8 +29,8 @@ def runall():
 
     # cxx tests
     cxxfailed = execute(
-        cmd = 'python run-cxx-tests.py',
-        where='src/mcvine',
+        cmd = 'python run-cxx-tests.py src/mcvine',
+        where='.',
         )
 
     # python unit tests
