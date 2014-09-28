@@ -36,7 +36,7 @@ def runall():
     # python unit tests
     pyunittestfailed = execute(
         # cmd = 'python run-unittests.py src/mcvine/packages/mcni',
-        cmd = 'python run-unittests.py --exclude-dirs=sansmodel*,obsolete src/mcvine/packages',
+        cmd = 'python run-unittest.py -r --exclude-dirs=sansmodel*,obsolete --log=log.verbose src/mcvine/packages',
         where = '.',
         )
 
