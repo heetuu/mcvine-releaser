@@ -150,8 +150,9 @@ def createReport(sources, nobinaries, failed, skipped):
             print "%s: %s" % (src, reason)
 
     # 
-    import sys
-    sys.exit(1)
+    if nobinaries or failed:
+        import sys
+        sys.exit(1)
     return
 
 
