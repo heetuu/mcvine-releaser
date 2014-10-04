@@ -25,13 +25,20 @@ def create(name):
     if os.system(cmd):
         raise RuntimeError, "%s failed" % cmd
 
+    # remove source control files, .pyc files etc
     from utils.build import clean_up
     clean_up(name)
-
+    
+    # remove example. they are distributed separately
+    cmd = 'rm -rf %s/src/mcvine/examples' % name
+    if os.system(cmd):
+        raise RuntimeError, "%s failed" % cmd
+    
+    # create tar ball
     cmd = 'tar -czf %s.tgz %s' % (name, name)
     if os.system(cmd):
         raise RuntimeError, "%s failed" % cmd
-
+    
     import shutil
     shutil.rmtree(name)
     
