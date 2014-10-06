@@ -9,20 +9,20 @@ bundleInfo = {
     
     "Pythia": [
     'pythia',
-    'pyregui',
+    # 'pyregui',
     ],
 
     "basic": [
     'dsm',
     'numpyext',
     'bpext',
-    'luban',
+    # 'luban',
     'histogram',
     'ins_matter',
     ],
 
     "kernel-deps": [
-    'sansmodels',  # optional
+    # 'sansmodels',  # optional
     ],
 
     "Core": [
@@ -32,7 +32,7 @@ bundleInfo = {
     ],
 
     "reduction": [
-    'drchops',
+    # 'drchops',
     ],
 
     }
