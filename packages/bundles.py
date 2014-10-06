@@ -32,7 +32,7 @@ bundleInfo = {
     ],
 
     "reduction": [
-    # 'drchops',
+    'drchops',
     ],
 
     }
