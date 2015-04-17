@@ -1,0 +1,8 @@
+April 2015:
+* Moving everything to github.
+* The conversion from svn mostly follow
+  http://john.albin.net/git/convert-subversion-to-git
+* For simple package without branches, just do the first two steps,
+  and then push it to github
+* For complex package with branches, follow the first 5 steps.
+  We don't really use tags, so step 6 is unnecessary
