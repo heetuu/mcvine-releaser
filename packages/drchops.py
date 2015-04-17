@@ -1,7 +1,11 @@
 from utils.packages.drchops import *
+from utils.package import repoutils
 
 # overload branch
-branch = "branches/2-alpha"
+# old: svn
+# branch = "branches/2-alpha"
+# repo = repoutils.svn.getPackageRepository(reponame, branch, name=name)
 
-from utils.package import repoutils
-repo = repoutils.svn.getPackageRepository(reponame, branch, name=name)
+
+branch = "2-alpha"
+repo = repoutils.git.getPackageRepository(reponame, branch, name=name)
