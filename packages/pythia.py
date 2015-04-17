@@ -2,10 +2,14 @@ name = "pyre"
 deps = ("config",)
 
 from utils.package import repoutils
-reponame = 'pyre'
-branch = "pythia-0.8"
-repo = repoutils.svn.getPackageRepository(reponame, branch, name=name)
 
+reponame = 'pyre'
+# svn
+# branch = "pythia-0.8"
+# repo = repoutils.svn.getPackageRepository(reponame, branch, name=name)
+
+branch = "master"
+repo = repoutils.git.getPackageRepository(reponame, branch, name=name)
 
 
 def patch( dest ):
