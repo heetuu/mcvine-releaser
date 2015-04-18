@@ -12,7 +12,12 @@
 #
 
 
+import os
+
 def main():
+    # init
+    os.system("./get_utils.sh")
+    if not os.path.exists('src'): os.makedirs("src")
     # build
     from utils.scripts.build import main
     print ">>> building mcvine"
@@ -25,7 +30,6 @@ def main():
 
     # build all mcstas components
     print ">>> building all mcvine-wrapped mcstas components"
-    import os
     os.system('./build_all_mcstas_components.sh')
     return
 
