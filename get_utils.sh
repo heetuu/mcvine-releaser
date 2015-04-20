@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-git clone git@github.com:heetuu/build_utils utils
+git clone https://github.com/heetuu/build_utils utils
