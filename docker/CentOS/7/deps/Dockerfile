@@ -1,3 +1,5 @@
+##### THIS IS NOT WORKING YET #####
+
 FROM centos:7
 
 MAINTAINER "Jiao Lin <linjiao@caltech.edu>"
@@ -6,14 +8,19 @@ LABEL Description="image prepared for buildindg MCViNE"
 
 # installation of basic software and dependencies
 # 
+# dev
+RUN yum install -y git gcc-c++ make
 # dependencies: packages
-RUN yum install -y python python-devel numpy python-psutil h5py
+RUN yum install -y python python-devel numpy 
+RUN easy_install psutil
+# hdf5 need additional stuff
+RUN rpm --import http://apt.sw.be/RPM-GPG-KEY.dag.txt
+RUN yum install http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
+RUN easy_install h5py
 # dependencies: c libs
 RUN yum install -y install gsl gsl-devel
 # dependencies: boost python
 RUN yum install -y boost-devel boost-python
-# dev
-RUN yum install -y git gcc-c++ make
 
 
 # prepare 

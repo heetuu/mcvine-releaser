@@ -1,4 +1,4 @@
-FROM linjiao/mcvine-centos-deps:6a
+FROM linjiao/mcvine-centos-deps:6
 
 MAINTAINER "Jiao Lin <linjiao@caltech.edu>"
 
