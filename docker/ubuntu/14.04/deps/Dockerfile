@@ -15,11 +15,3 @@ RUN apt-get -qy install libgsl0-dev
 RUN apt-get -qy install libboost-python-dev libboost-python1.55.0
 # dev
 RUN apt-get -qy install git g++ make
-
-
-# prepare 
-RUN mkdir -p /opt
-WORKDIR /opt
-RUN git clone https://github.com/heetuu/mcvine-releaser.git mcvine
-WORKDIR /opt/mcvine
-# RUN BOOSTPYTHON_DIR=/usr BOOSTPYTHON_INCDIR=/usr/include BOOSTPYTHON_LIBDIR=/usr/lib/x86_64-linux-gnu ./build.py

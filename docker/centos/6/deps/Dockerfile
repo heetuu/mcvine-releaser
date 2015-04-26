@@ -48,8 +48,6 @@ RUN ./b2 install
 # gsl
 RUN yum install -y install gsl gsl-devel
 
-# prepare 
-WORKDIR /opt
 # srcctrl
 RUN yum install -y git
-RUN git clone https://github.com/heetuu/mcvine-releaser.git mcvine
+

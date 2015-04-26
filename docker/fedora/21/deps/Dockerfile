@@ -15,10 +15,3 @@ RUN yum install -y boost-devel boost-python
 # dev
 RUN yum install -y git gcc-c++ make
 
-
-# prepare 
-RUN mkdir -p /opt
-WORKDIR /opt
-RUN git clone https://github.com/heetuu/mcvine-releaser.git mcvine
-# WORKDIR /opt/mcvine
-# RUN BOOSTPYTHON_INCDIR=/usr/include BOOSTPYTHON_LIBDIR=/usr/lib64 ./build.py
