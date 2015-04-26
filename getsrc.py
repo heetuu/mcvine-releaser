@@ -12,13 +12,12 @@
 #
 
 
-# script to check out sources
+import os; os.system("./bootstrap.sh")
 
+# script to check out sources
 from utils.scripts.getsrc import main
 
-if __name__ == "__main__": 
-    import os; os.system("./bootstrap.sh")
-    main()
+if __name__ == "__main__": main()
 
 
 
