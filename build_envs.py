@@ -31,7 +31,6 @@ def factory(package, export):
     ops = createEnvVarOps(package, export)
     from utils.envvars.operations import Set
     bp_inc, bp_lib = get_bp_info('src/dottools')
-    import pdb; pdb.set_trace()
     ops.append(Set('BOOSTPYTHON_INCDIR', bp_inc))
     ops.append(Set('BOOSTPYTHON_LIBDIR', bp_lib))
     return ops
