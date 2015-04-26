@@ -8,7 +8,7 @@
 #  - bash
 #  - python
 #  - tar
-#  - svn
+#  - git
 
 import os, sys
 
@@ -18,7 +18,7 @@ def create(name):
         raise ValueError, "bad directory name %s" % name
     if os.path.exists(name):
         raise IOError, "%s already exists" % name
-    cmd = ['svn co svn://danse.us/buildInelast/mcvine %s' % name]
+    cmd = ['git clone https://github.com/heetuu/mcvine-releaser %s' % name]
     cmd.append('cd %s' %name)
     cmd.append('./getsrc.py')
     cmd = ' && '.join(cmd)
