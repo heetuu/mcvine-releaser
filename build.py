@@ -16,8 +16,7 @@ import os
 
 def main():
     # init
-    os.system("./get_utils.sh")
-    if not os.path.exists('src'): os.makedirs("src")
+    os.system("./bootstrap.sh")
     # build
     from utils.scripts.build import main
     print ">>> building mcvine"
