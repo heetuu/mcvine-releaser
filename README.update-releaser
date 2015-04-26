@@ -1,0 +1,9 @@
+Dependencies:
+  update deps.py
+
+Packages:
+  update directory packages/
+
+Prerequisites:
+  g++, git, python, make
+
