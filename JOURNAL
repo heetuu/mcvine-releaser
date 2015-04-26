@@ -11,3 +11,10 @@ April 2015:
   possible.
 * To convert mcvine repo, trying to follow
   https://www.atlassian.com/git/tutorials/migrating-prepare
+* moved "examples" subdirs into mcvine-resources
+* moved "instruments/ARCS/simulations" and "instruments/ARCS/resources" into mcvine-resources
+* moved "instruments/SEQUOIA/resources" into mcvine-resources
+* removed "pyre/packages/pyrev"
+* moved "packages/mccomponents/tests/mccomponents/sample/phonon/data" into mcvine-resources
+* moved "docs/sphinx/examples/data/phonon" into mcvine-resources
+* moved "instruments/(HYSPEC,VULCAN,CNCS)/resources" into mcvine-resources
