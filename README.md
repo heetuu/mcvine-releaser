@@ -1,10 +1,9 @@
-The facility to build mcvine
-----------------------------
-
-1. Install prerequsites
+# The facility to build mcvine
+## Build
+### Install prerequsites
 
 See Dockerfiles in docker/ sub-directory for hints on how to install dependencies.
 
-2. Build
+### Build
 
   $ ./build.py
