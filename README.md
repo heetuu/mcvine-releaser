@@ -11,7 +11,7 @@ See Dockerfiles in docker/ sub-directory for hints on how to install dependencie
 ## Organization
 
 * deps.py: information of external dependencies 
-* packages/: information of included packages
+* packages/: information of included packages and their dependencies
 * src/: source directory
 * docker/: docker instructions to build mcvine dependencies, build mcvine, and test mcvine
 * buildbot/: buildbot configurations
