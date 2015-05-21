@@ -1,1 +1,7 @@
 *.pyc
+*.log
+/src
+/EXPORT
+/build_info
+/utils
+/tmp
