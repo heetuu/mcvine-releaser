@@ -9,6 +9,7 @@ RUN apt-get update
 # 
 # dependencies: packages
 RUN apt-get -qy install python python-numpy python-psutil python-h5py
+RUN apt-get -qy install python-mpi4py
 # dependencies: c libs
 RUN apt-get -qy install libgsl0-dev 
 # dependencies: boost python
