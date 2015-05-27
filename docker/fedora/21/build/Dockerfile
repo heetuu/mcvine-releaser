@@ -1,4 +1,4 @@
-FROM linjiao/mcvine-fedora-deps
+FROM linjiao/mcvine-fedora-deps:21
 
 MAINTAINER "Jiao Lin <linjiao@caltech.edu>"
 
