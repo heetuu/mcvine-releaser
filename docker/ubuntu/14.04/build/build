@@ -1,1 +1,1 @@
-sudo docker build -t linjiao/mcvine-ubuntu-build .
+sudo docker build -t linjiao/mcvine-ubuntu-build:14.04 .

@@ -1,4 +1,4 @@
-FROM linjiao/mcvine-ubuntu-deps
+FROM linjiao/mcvine-ubuntu-deps:14.04
 
 MAINTAINER "Jiao Lin <linjiao@caltech.edu>"
 
