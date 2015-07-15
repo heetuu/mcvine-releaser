@@ -1,3 +1,18 @@
+!!!Should write a log of all changes!!!
+
+
+
+July 2015
+
+CNCS
+----
+
+(in mcvine-resources) 
+* upgraded mcstas files to 2.2a. problem: Al_window
+* mcstas-1 files: added beam.instr. created example to run simulation
+
+
+
 April 2015:
 * Moving everything to github.
 * The conversion from svn mostly follow
