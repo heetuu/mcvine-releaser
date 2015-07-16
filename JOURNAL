@@ -11,6 +11,13 @@ CNCS
 * upgraded mcstas files to 2.2a. problem: Al_window
 * mcstas-1 files: added beam.instr. created example to run simulation
 
+(in instrument)
+* added instrument.factories.CNCS. copied from .HYSPEC and modify
+* problem: implementation of instrument.factories is a bit messy
+      and can use some refactoring
+* added share/CNCS/CNCS_Definition.xml (copied from mantid)
+* created tests/instrument/factories/CNCS (follow the structure in HYSPEC)
+  - Note: cncs-mantid-idf.xml is slightly different from .../share/CNCS/CNCS_Definitions.xml copied from mantid
 
 
 April 2015:
