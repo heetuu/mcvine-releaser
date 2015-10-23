@@ -17,9 +17,10 @@ before_install:
     fi
 
 before_script:
+  git clone https://github.com/heetuu/mcvine-resources.git
 
 script:
-  bash ls
+  cd mcvine-releaser && ./build.py
     
 addons:
   apt:
