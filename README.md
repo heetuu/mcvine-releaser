@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/heetuu/mcvine-releaser.svg?branch=master)](https://travis-ci.org/heetuu/mcvine-releaser) 
+
 # The facility to build mcvine
 ## Build instructions
 ### Install prerequsites
