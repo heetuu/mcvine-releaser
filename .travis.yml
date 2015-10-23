@@ -20,7 +20,7 @@ before_script:
   git clone https://github.com/heetuu/mcvine-resources.git
 
 script:
-  cd mcvine-releaser && ./build.py
+  ./build.py
     
 addons:
   apt:
