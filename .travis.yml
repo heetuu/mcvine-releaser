@@ -14,11 +14,6 @@ matrix:
     - os: linux
       compiler: gcc
     
-before_install:
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; 
-    then 
-    fi
-
 before_script:
   git clone https://github.com/heetuu/mcvine-resources.git
   docker pull linjiao/mcvine-ubuntu-deps:12.04
