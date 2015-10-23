@@ -15,11 +15,11 @@ matrix:
       compiler: gcc
     
 before_script:
-  git clone https://github.com/heetuu/mcvine-resources.git
-  docker pull linjiao/mcvine-ubuntu-deps:12.04
+  - git clone https://github.com/heetuu/mcvine-resources.git
+  - docker pull linjiao/mcvine-ubuntu-deps:12.04
 
 script:
-  docker run -v `readlink -f .`:/mcvine-src  -e "BOOSTPYTHON_DIR=/usr" -e "BOOSTPYTHON_INCDIR=/usr/include" -e "BOOSTPYTHON_LIBDIR=/usr/lib/x86_64-linux-gnu" -w /mcvine-src linjiao/mcvine-ubuntu-deps:12.04  /usr/bin/python build.py
+  - docker run -v `readlink -f .`:/mcvine-src  -e "BOOSTPYTHON_DIR=/usr" -e "BOOSTPYTHON_INCDIR=/usr/include" -e "BOOSTPYTHON_LIBDIR=/usr/lib/x86_64-linux-gnu" -w /mcvine-src linjiao/mcvine-ubuntu-deps:12.04  /usr/bin/python build.py
     
 notifications:
   email:
