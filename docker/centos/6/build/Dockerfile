@@ -6,7 +6,7 @@ LABEL Description="image to build MCViNE"
 
 # prepare 
 WORKDIR /opt
-RUN git clone https://github.com/heetuu/mcvine-releaser.git mcvine
+RUN git clone https://github.com/mcvine/releaser.git mcvine
 
 # build
 WORKDIR /opt/mcvine

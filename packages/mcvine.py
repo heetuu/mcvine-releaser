@@ -6,6 +6,7 @@ from utils.package import repoutils
 # repo = repoutils.svn.getPackageRepository(reponame, branch, name=name)
 
 # git
-reponame = "MCViNE"
+reponame = "mcvine"
 branch = "master"
-repo = repoutils.git.getPackageRepository(reponame, branch, name=name)
+server = "https://github.com/mcvine"
+repo = repoutils.git.getPackageRepository(reponame, branch, name=name, server=server)

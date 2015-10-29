@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/heetuu/mcvine-releaser.svg?branch=master)](https://travis-ci.org/heetuu/mcvine-releaser) 
+[![Build Status](https://travis-ci.org/mcvine/releaser.svg?branch=master)](https://travis-ci.org/mcvine/releaser) 
 
 # The facility to build mcvine
 ## Build instructions
@@ -17,4 +17,4 @@ See Dockerfiles in docker/ sub-directory for hints on how to install dependencie
 * src/: source directory
 * docker/: docker instructions to build mcvine dependencies, build mcvine, and test mcvine
 * buildbot/: buildbot configurations
-* utils/: utilities for this releaser. checked out heetuu/build_utils
+* utils/: utilities for this releaser. checked out danse-inelastic/build_utils
