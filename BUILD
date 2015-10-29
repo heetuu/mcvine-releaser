@@ -1,1 +1,1 @@
-See docker files under "docker" subdir here for hints
+See docker files under "docker" subdir for hints
