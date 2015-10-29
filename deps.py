@@ -9,6 +9,7 @@ packages = [
     'gsl',
     #'wxPython',
     #'McStas',
+    # danse.ins packages
     ]
 
 descriptions = {
