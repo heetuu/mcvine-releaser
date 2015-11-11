@@ -7,19 +7,19 @@ bundleInfo = {
     "config",
     ],
     
-    "Pythia": [
-    'pythia',
-    # 'pyregui',
-    ],
+    # "Pythia": [
+    # 'pythia',
+    ## 'pyregui',
+    # ],
 
-    "basic": [
-    'dsm',
-    'numpyext',
-    'bpext',
-    # 'luban',
-    'histogram',
-    'ins_matter',
-    ],
+    # "basic": [
+    # 'dsm',
+    # 'numpyext',
+    # 'bpext',
+    ## 'luban',
+    # 'histogram',
+    # 'ins_matter',
+    # ],
 
     "kernel-deps": [
     # 'sansmodels',  # optional
@@ -31,10 +31,10 @@ bundleInfo = {
     'mcvine',
     ],
 
-    "reduction": [
-    'drchops',
-    ],
-
+    # "reduction": [
+    # 'drchops',
+    # ],
+    
     }
 
 
@@ -43,9 +43,9 @@ bundleInfo = {
 #more basic bundles are in the front.
 bundleNames = [
     'Prerequisite',
-    'Pythia',
-    'basic',
-    'reduction',
+    # 'Pythia',
+    # 'basic',
+    # 'reduction',
     'Core',
     'kernel-deps',
     ]
