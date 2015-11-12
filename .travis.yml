@@ -20,7 +20,7 @@ before_script:
 
 script:
   - cd docker/ubuntu/14.04/build && ./rebuild && cd -
-  - cd docker/ubuntu/14.04/test && MCVINE_RESOURCES=$PWD/mcvine-resources ./run
+  - cd docker/ubuntu/14.04/test && MCVINE_RESOURCES=$PWD/../../../../mcvine-resources ./run
     
 notifications:
   email:
