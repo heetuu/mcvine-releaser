@@ -16,3 +16,8 @@ RUN apt-get -qy install libgsl0-dev
 RUN apt-get -qy install libboost-python-dev libboost-python1.48.0
 # dev
 RUN apt-get -qy install git g++ make
+
+# danse ins pkgs
+RUN apt-get -qy install curl
+RUN curl -s https://packagecloud.io/install/repositories/danse/ins/script.deb.sh |  bash
+RUN apt-get -qy install pyre danse.ins.dsm danse.ins.numpyext danse.ins.bpext histogram danse.ins.matter drchops
