@@ -1,4 +1,6 @@
-[![Build Status](https://travis-ci.org/mcvine/releaser.svg?branch=master)](https://travis-ci.org/mcvine/releaser) 
+**_This is obsolete. Building release is now done with the mcvine source code using cmake_**
+
+[![Build Status](https://travis-ci.org/mcvine/releaser.svg?branch=master)](https://travis-ci.org/mcvine/releaser)
 
 # The facility to build mcvine
 ## Build instructions
